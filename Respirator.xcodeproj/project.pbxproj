@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0457C0F005473AB0F02556AD /* Pods_Respirator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C14BA9337B1C7C9D33BC60BE /* Pods_Respirator.framework */; };
 		1094341A1F1EEDD800A9F659 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 109434191F1EEDD800A9F659 /* main.m */; };
 		1094341D1F1EEDD800A9F659 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1094341C1F1EEDD800A9F659 /* AppDelegate.m */; };
 		109434201F1EEDD800A9F659 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1094341F1F1EEDD800A9F659 /* ViewController.m */; };
@@ -26,6 +27,9 @@
 		109434241F1EEDD800A9F659 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		109434271F1EEDD800A9F659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		109434291F1EEDD800A9F659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		372DF78116B1527744DFA5C7 /* Pods-Respirator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Respirator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Respirator/Pods-Respirator.debug.xcconfig"; sourceTree = "<group>"; };
+		970B280D5642627D243DC3C7 /* Pods-Respirator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Respirator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Respirator/Pods-Respirator.release.xcconfig"; sourceTree = "<group>"; };
+		C14BA9337B1C7C9D33BC60BE /* Pods_Respirator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Respirator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0457C0F005473AB0F02556AD /* Pods_Respirator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				109434171F1EEDD800A9F659 /* Respirator */,
 				109434161F1EEDD800A9F659 /* Products */,
+				12380A13640AB1E263636A55 /* Pods */,
+				D1427CAECFEEC97672B346E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		12380A13640AB1E263636A55 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				372DF78116B1527744DFA5C7 /* Pods-Respirator.debug.xcconfig */,
+				970B280D5642627D243DC3C7 /* Pods-Respirator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D1427CAECFEEC97672B346E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C14BA9337B1C7C9D33BC60BE /* Pods_Respirator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1094342C1F1EEDD800A9F659 /* Build configuration list for PBXNativeTarget "Respirator" */;
 			buildPhases = (
+				8AB08D7D8094F933C884EF72 /* [CP] Check Pods Manifest.lock */,
 				109434111F1EEDD700A9F659 /* Sources */,
 				109434121F1EEDD700A9F659 /* Frameworks */,
 				109434131F1EEDD700A9F659 /* Resources */,
+				99235E8F227D12E3146EB087 /* [CP] Embed Pods Frameworks */,
+				B3BD297F5FF4E57E103E4BF4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -145,6 +172,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8AB08D7D8094F933C884EF72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		99235E8F227D12E3146EB087 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Respirator/Pods-Respirator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3BD297F5FF4E57E103E4BF4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Respirator/Pods-Respirator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		109434111F1EEDD700A9F659 /* Sources */ = {
@@ -220,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -262,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -271,10 +346,12 @@
 		};
 		1094342D1F1EEDD800A9F659 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 372DF78116B1527744DFA5C7 /* Pods-Respirator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CZG37T4ZQ8;
 				INFOPLIST_FILE = Respirator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = manridy.com.Respirator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -283,10 +360,12 @@
 		};
 		1094342E1F1EEDD800A9F659 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 970B280D5642627D243DC3C7 /* Pods-Respirator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CZG37T4ZQ8;
 				INFOPLIST_FILE = Respirator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = manridy.com.Respirator;
 				PRODUCT_NAME = "$(TARGET_NAME)";

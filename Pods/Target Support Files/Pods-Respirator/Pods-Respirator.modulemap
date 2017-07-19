@@ -1,0 +1,6 @@
+framework module Pods_Respirator {
+  umbrella header "Pods-Respirator-umbrella.h"
+
+  export *
+  module * { export * }
+}

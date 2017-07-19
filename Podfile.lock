@@ -1,0 +1,38 @@
+PODS:
+  - Bugly (2.4.8)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - iOSDFULibrary (3.0.6):
+    - Zip (~> 0.6)
+  - Masonry (1.0.2)
+  - MaterialControls (1.2.2)
+  - MBProgressHUD (1.0.0)
+  - PNChart (0.8.9):
+    - UICountingLabel (~> 1.2.0)
+  - UICountingLabel (1.2.0)
+  - Zip (0.7.0)
+
+DEPENDENCIES:
+  - Bugly (~> 2.4.2)
+  - FMDB (~> 2.6.2)
+  - iOSDFULibrary (~> 3.0.1)
+  - Masonry (~> 1.0.2)
+  - MaterialControls (~> 1.2.2)
+  - MBProgressHUD (~> 1.0.0)
+  - PNChart (~> 0.8.9)
+
+SPEC CHECKSUMS:
+  Bugly: da3c02408c14838d498429320545a8e439392978
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  iOSDFULibrary: e9f7838a54eed84228669c7739d8d7ed98d3da31
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MaterialControls: 1c6b29e78d3a13d8dd6a67ed31b6d26eb5de8f72
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
+  Zip: e34513299ac38c0686d5b24504da7ce343799ab9
+
+PODFILE CHECKSUM: 7c5489ea25c4161d8a0bfefa5afeda89476210c5
+
+COCOAPODS: 1.2.1
