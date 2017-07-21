@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>YYKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Zip.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,17 +62,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1E3E7C3FD3A0EEDEA53285F1C23B71FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>251BAD17812F7EBF6532EACF66F941C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2EAC8C84EC9F8217D28FF4B7107ECDEC</key>
+		<key>3A43395A1696E283CA24A4012C4E0CC1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3A43395A1696E283CA24A4012C4E0CC1</key>
+		<key>3F1038CA6E9425AEB1DE438413E4D2E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

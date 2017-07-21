@@ -11,6 +11,9 @@ PODS:
   - PNChart (0.8.9):
     - UICountingLabel (~> 1.2.0)
   - UICountingLabel (1.2.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
   - Zip (0.7.0)
 
 DEPENDENCIES:
@@ -21,6 +24,7 @@ DEPENDENCIES:
   - MaterialControls (~> 1.2.2)
   - MBProgressHUD (~> 1.0.0)
   - PNChart (~> 0.8.9)
+  - YYKit
 
 SPEC CHECKSUMS:
   Bugly: da3c02408c14838d498429320545a8e439392978
@@ -31,8 +35,9 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   Zip: e34513299ac38c0686d5b24504da7ce343799ab9
 
-PODFILE CHECKSUM: 7c5489ea25c4161d8a0bfefa5afeda89476210c5
+PODFILE CHECKSUM: c204c91338cc129c1142928d91999d82d6d390ba
 
 COCOAPODS: 1.2.1
