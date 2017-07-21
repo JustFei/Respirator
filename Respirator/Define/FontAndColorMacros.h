@@ -18,11 +18,11 @@
 //#define CNavBgFontColor  [UIColor colorWithHexString:@"000000"]
 
 //绿色主题
-#define CNavBgColor  [UIColor colorWithHexString:@"00AE68"]
+#define CNavBgColor  [UIColor colorWithHexString:@"00acc1"]
 #define CNavBgFontColor  [UIColor colorWithHexString:@"ffffff"]
 
 //默认页面背景色
-#define CViewBgColor [UIColor colorWithHexString:@"f2f2f2"]
+#define CViewBgColor [UIColor colorWithHexString:@"fcfcfc"]
 
 //分割线颜色
 #define CLineColor [UIColor colorWithHexString:@"ededed"]

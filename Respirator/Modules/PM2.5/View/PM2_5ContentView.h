@@ -1,5 +1,5 @@
 //
-//  PM2_5ViewController.h
+//  PM2_5ContentView.h
 //  Respirator
 //
 //  Created by JustFei on 2017/7/21.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PM2_5ViewController : RootViewController
+@interface PM2_5ContentView : UIView
 
 @end

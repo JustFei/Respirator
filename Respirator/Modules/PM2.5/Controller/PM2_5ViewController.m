@@ -7,8 +7,11 @@
 //
 
 #import "PM2_5ViewController.h"
+#import "PM2_5ContentView.h"
 
 @interface PM2_5ViewController ()
+
+@property (strong, nonatomic) PM2_5ContentView *contentView;
 
 @end
 
@@ -16,22 +19,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self setupUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - init UI
+- (void)setupUI
+{
+    [self addNavigationItemWithImageNames:@[@"pm_historyicon"] isLeft:YES target:self action:@selector(showPM2_5HistoryVC) tags:@[@1000]];
+    self.contentView.backgroundColor = CViewBgColor;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Action
+- (void)showPM2_5HistoryVC
+{
+    
 }
-*/
+
+#pragma mark - Lazy
+- (PM2_5ContentView *)contentView
+{
+    if (!_contentView) {
+        _contentView = [[PM2_5ContentView alloc] initWithFrame:self.view.bounds];
+        [self.view addSubview:_contentView];
+    }
+    
+    return _contentView;
+}
 
 @end
