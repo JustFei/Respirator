@@ -41,6 +41,7 @@
 		108C8C471F21F08500D86FC0 /* RxWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C8C411F21F08500D86FC0 /* RxWebViewController.m */; };
 		108C8C481F21F08500D86FC0 /* RxWebViewNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C8C431F21F08500D86FC0 /* RxWebViewNavigationViewController.m */; };
 		108C8C4B1F22057500D86FC0 /* PM2_5ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 108C8C4A1F22057500D86FC0 /* PM2_5ContentView.m */; };
+		10C03C751F2336860048F9A4 /* StepContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C03C741F2336860048F9A4 /* StepContentView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,8 @@
 		108C8C491F22057500D86FC0 /* PM2_5ContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PM2_5ContentView.h; sourceTree = "<group>"; };
 		108C8C4A1F22057500D86FC0 /* PM2_5ContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PM2_5ContentView.m; sourceTree = "<group>"; };
 		109434151F1EEDD800A9F659 /* Respirator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Respirator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10C03C731F2336860048F9A4 /* StepContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepContentView.h; sourceTree = "<group>"; };
+		10C03C741F2336860048F9A4 /* StepContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepContentView.m; sourceTree = "<group>"; };
 		372DF78116B1527744DFA5C7 /* Pods-Respirator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Respirator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Respirator/Pods-Respirator.debug.xcconfig"; sourceTree = "<group>"; };
 		970B280D5642627D243DC3C7 /* Pods-Respirator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Respirator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Respirator/Pods-Respirator.release.xcconfig"; sourceTree = "<group>"; };
 		C14BA9337B1C7C9D33BC60BE /* Pods_Respirator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Respirator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,12 +249,12 @@
 		108C8BBB1F21D1D800D86FC0 /* Setting(设置) */ = {
 			isa = PBXGroup;
 			children = (
+				108C8BBE1F21D1D800D86FC0 /* Model */,
+				108C8BC11F21D1D800D86FC0 /* View */,
 				108C8BBC1F21D1D800D86FC0 /* Controller */,
 				108C8BBD1F21D1D800D86FC0 /* Logic */,
-				108C8BBE1F21D1D800D86FC0 /* Model */,
 				108C8BBF1F21D1D800D86FC0 /* Resource */,
 				108C8BC01F21D1D800D86FC0 /* Service */,
-				108C8BC11F21D1D800D86FC0 /* View */,
 			);
 			path = "Setting(设置)";
 			sourceTree = "<group>";
@@ -303,12 +306,12 @@
 		108C8BC21F21D1D800D86FC0 /* Step(计步) */ = {
 			isa = PBXGroup;
 			children = (
+				108C8BC51F21D1D800D86FC0 /* Model */,
+				108C8BC81F21D1D800D86FC0 /* View */,
 				108C8BC31F21D1D800D86FC0 /* Controller */,
 				108C8BC41F21D1D800D86FC0 /* Logic */,
-				108C8BC51F21D1D800D86FC0 /* Model */,
 				108C8BC61F21D1D800D86FC0 /* Resource */,
 				108C8BC71F21D1D800D86FC0 /* Service */,
-				108C8BC81F21D1D800D86FC0 /* View */,
 			);
 			path = "Step(计步)";
 			sourceTree = "<group>";
@@ -353,6 +356,8 @@
 		108C8BC81F21D1D800D86FC0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				10C03C731F2336860048F9A4 /* StepContentView.h */,
+				10C03C741F2336860048F9A4 /* StepContentView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -714,6 +719,7 @@
 				108C8C371F21E33800D86FC0 /* SettingViewController.m in Sources */,
 				108C8C441F21F08500D86FC0 /* NJKWebViewProgress.m in Sources */,
 				108C8BAA1F21CD0600D86FC0 /* AppDelegate+AppService.m in Sources */,
+				10C03C751F2336860048F9A4 /* StepContentView.m in Sources */,
 				108C8BFA1F21DA2800D86FC0 /* GameInfo.m in Sources */,
 				108C8C2E1F21DBA300D86FC0 /* XYTransition.m in Sources */,
 				108C8C4B1F22057500D86FC0 /* PM2_5ContentView.m in Sources */,

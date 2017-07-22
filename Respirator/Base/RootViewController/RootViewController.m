@@ -28,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor =KWhiteColor;
+    //让 self.view 从 navibar 下面开始计算到 toolBar 上方截止
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     //是否显示返回按钮
     self.isShowLiftBack = YES;
     self.StatusBarStyle = UIStatusBarStyleLightContent;

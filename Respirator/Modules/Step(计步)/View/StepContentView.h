@@ -1,13 +1,13 @@
 //
-//  StepViewController.h
+//  StepContentView.h
 //  Respirator
 //
-//  Created by JustFei on 2017/7/21.
+//  Created by JustFei on 2017/7/22.
 //  Copyright © 2017年 manridy.com. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface StepViewController : RootViewController
+@interface StepContentView : UIView
 
 @end

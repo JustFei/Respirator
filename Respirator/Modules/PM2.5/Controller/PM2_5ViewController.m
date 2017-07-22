@@ -41,6 +41,7 @@
 {
     if (!_contentView) {
         _contentView = [[PM2_5ContentView alloc] initWithFrame:self.view.bounds];
+        //DLog(@"self.view.bounds == %@", self.view.bounds);
         [self.view addSubview:_contentView];
     }
     

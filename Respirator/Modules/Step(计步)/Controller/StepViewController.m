@@ -7,8 +7,11 @@
 //
 
 #import "StepViewController.h"
+#import "StepContentView.h"
 
 @interface StepViewController ()
+
+@property (strong, nonatomic) StepContentView *contentView;
 
 @end
 
@@ -16,22 +19,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self setupUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - init UI
+- (void)setupUI
+{
+    [self addNavigationItemWithImageNames:@[@"pm_historyicon"] isLeft:YES target:self action:@selector(showStepHistoryVC) tags:@[@1000]];
+    self.contentView.backgroundColor = CViewBgColor;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Action
+- (void)showStepHistoryVC
+{
+    
 }
-*/
+
+#pragma mark - Lazy
+- (StepContentView *)contentView
+{
+    if (!_contentView) {
+        _contentView = [[StepContentView alloc] initWithFrame:self.view.bounds];
+        //DLog(@"self.view.bounds == %@", self.view.bounds);
+        [self.view addSubview:_contentView];
+    }
+    
+    return _contentView;
+}
 
 @end
