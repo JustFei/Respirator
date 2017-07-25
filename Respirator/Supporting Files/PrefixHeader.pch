@@ -15,6 +15,7 @@
 #import "FontAndColorMacros.h"
 #import "ThirdMacros.h"
 #import "CommonMacros.h"
+#import "TextConstants.h"
 
 //基础类
 #import "AppDelegate.h"
@@ -30,5 +31,6 @@
 #import "YYKit.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <Masonry/Masonry.h>
+#import "MaterialControls.h"
 
 #endif /* PrefixHeader_pch */

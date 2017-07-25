@@ -41,7 +41,6 @@
 {
     if (!_contentView) {
         _contentView = [[StepContentView alloc] initWithFrame:self.view.bounds];
-        //DLog(@"self.view.bounds == %@", self.view.bounds);
         [self.view addSubview:_contentView];
     }
     

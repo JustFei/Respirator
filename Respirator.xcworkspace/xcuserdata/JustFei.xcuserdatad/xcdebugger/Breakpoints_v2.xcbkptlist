@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Respirator/Modules/Setting(&#x8bbe;&#x7f6e;)/Controller/SettingViewController.m"
+            timestampString = "522667615.4908"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-contentView"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SettingViewController contentView]"
+                  moduleName = "Respirator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mofujian/Desktop/ProjectList/ProjectList/MRD-HM010%20%E5%8F%A3%E7%BD%A9/Respirator/Respirator/Modules/Setting(%E8%AE%BE%E7%BD%AE)/Controller/SettingViewController.m"
+                  timestampString = "522667616.68157"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[SettingViewController contentView]_block_invoke"
+                  moduleName = "Respirator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mofujian/Desktop/ProjectList/ProjectList/MRD-HM010%20%E5%8F%A3%E7%BD%A9/Respirator/Respirator/Modules/Setting(%E8%AE%BE%E7%BD%AE)/Controller/SettingViewController.m"
+                  timestampString = "522667616.686282"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -7,8 +7,11 @@
 //
 
 #import "SettingViewController.h"
+#import "SettingContentView.h"
 
 @interface SettingViewController ()
+
+@property (strong, nonatomic) SettingContentView *contentView;
 
 @end
 
@@ -16,22 +19,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self setupUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - init UI
+- (void)setupUI
+{
+    self.contentView.backgroundColor = CViewBgColor;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Lazy
+- (SettingContentView *)contentView
+{
+    if (!_contentView) {
+        _contentView = [[SettingContentView alloc] initWithFrame:CGRectZero];
+        [self.view addSubview:_contentView];
+        [_contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.view.mas_right);
+            make.left.equalTo(self.view.mas_left);
+            make.bottom.equalTo(self.view.mas_bottom);
+            make.top.equalTo(self.view.mas_top);
+        }];
+    }
+    
+    return _contentView;
 }
-*/
 
 @end
