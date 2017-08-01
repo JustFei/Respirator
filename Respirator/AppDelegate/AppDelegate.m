@@ -10,6 +10,8 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic, strong) MDSnackbar *stateBar;
+
 @end
 
 @implementation AppDelegate

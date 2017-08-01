@@ -45,7 +45,7 @@
 #define CONNECT_DIAL_COLOR COLOR_WITH_RGBA(124.0, 204.0, 218.0, 1)
 
 /** navigationBar 的颜色 */
-#define NAVIGATION_BAR_COLOR COLOR_WITH_HEX(0x2196f3, 1)
+#define NAVIGATION_BAR_COLOR COLOR_WITH_HEX(0x00acc1, 1)
 
 /** tableView 线的颜色 */
 #define TABLEVIEW_LINE_COLOR COLOR_WITH_HEX(0xcccccc,1)

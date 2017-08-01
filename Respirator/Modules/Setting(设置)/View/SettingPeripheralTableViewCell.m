@@ -47,9 +47,9 @@
         _powerLabel.hidden = !peripheralModel.isBind;
         _headImageView.hidden = !peripheralModel.isBind;
         [_peripheralNameLabel setText:peripheralModel.peripheralName];
-        [_bindLabel setText:peripheralModel.isBind ? NSLocalizedString(@"haveBindPer", nil) : NSLocalizedString(@"notBindPer", nil)];
-        [_connectLabel setText:peripheralModel.isConnect ? NSLocalizedString(@"haveConnect", nil) : NSLocalizedString(@"notConnect", nil)];
-        [_powerLabel setText:[NSString stringWithFormat:@"%@:%@%%", NSLocalizedString(@"electricity", nil), peripheralModel.battery]];
+        [_bindLabel setText:peripheralModel.isBind ? NSLocalizedString(@"已绑定", nil) : NSLocalizedString(@"未绑定", nil)];
+        [_connectLabel setText:peripheralModel.isConnect ? NSLocalizedString(@"已连接", nil) : NSLocalizedString(@"未连接", nil)];
+        [_powerLabel setText:[NSString stringWithFormat:@"%@:%@%%", NSLocalizedString(@"电量", nil), peripheralModel.battery]];
 }
 
 @end

@@ -11,6 +11,7 @@
 
 @interface SettingViewController ()
 
+@property (strong, nonatomic) NSArray *vcArr;
 @property (strong, nonatomic) SettingContentView *contentView;
 
 @end
@@ -21,15 +22,30 @@
     [super viewDidLoad];
     
     [self setupUI];
+    
 }
 
 #pragma mark - init UI
 - (void)setupUI
 {
     self.contentView.backgroundColor = CViewBgColor;
+    __weak __typeof__(self) weakSelf = self;
+    self.contentView.selectVCNumberBlock = ^(NSInteger number) {
+        id pushVC = [[NSClassFromString(weakSelf.vcArr[number]) alloc] init];
+        [weakSelf.navigationController pushViewController:pushVC animated:YES];
+    };
 }
 
 #pragma mark - Lazy
+- (NSArray *)vcArr
+{
+    if (!_vcArr) {
+        _vcArr = @[@"UserInfoViewController",@"BindPeripheralViewController",@"",@"UserLocationViewController",@"",@""];
+    }
+    
+    return _vcArr;
+}
+
 - (SettingContentView *)contentView
 {
     if (!_contentView) {

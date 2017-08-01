@@ -80,8 +80,9 @@ static NSString *const settingHeaderID = @"settingHeader";
         UIView *backgroundView = [[UIView alloc] initWithFrame:view.bounds];
         backgroundView.backgroundColor = SETTING_BACKGROUND_COLOR;
         view.userInfoButtonClickBlock = ^ {
-            id pushVC = [[NSClassFromString(@"UserInfoViewController") alloc] init];
-            //[self.navigationController pushViewController:pushVC animated:YES];
+            if (self.selectVCNumberBlock) {
+                self.selectVCNumberBlock(0);
+            }
         };
         view.backgroundView = backgroundView;
         return view;
@@ -123,14 +124,16 @@ static NSString *const settingHeaderID = @"settingHeader";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section == 0) {
-        id pushVC = [[NSClassFromString(@"BindPeripheralViewController") alloc] init];
-        //[self.navigationController pushViewController:pushVC animated:YES];
-    }else if (indexPath.section == 1) {
-        id pushVC = [[NSClassFromString(self.vcArray[indexPath.row]) alloc] init];
-        //[self.navigationController pushViewController:pushVC animated:YES];
-    }
     
+    if (indexPath.section == 0) {
+        if (self.selectVCNumberBlock) {
+            self.selectVCNumberBlock(1);
+        }
+    }else if (indexPath.section == 1) {
+        if (self.selectVCNumberBlock) {
+            self.selectVCNumberBlock(indexPath.row + 2);
+        }
+    }
 }
 
 #pragma mark - lazy
@@ -163,8 +166,8 @@ static NSString *const settingHeaderID = @"settingHeader";
     if (!_groupFirstDataSourceArr) {
         PeripheralCellModel *model = [[PeripheralCellModel alloc] init];
         
-        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isBind"]) {
-            model.isBind = [[NSUserDefaults standardUserDefaults] boolForKey:@"isBind"];
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:IS_BIND]) {
+            model.isBind = [[NSUserDefaults standardUserDefaults] boolForKey:IS_BIND];
             model.peripheralName = [[NSUserDefaults standardUserDefaults] objectForKey:@"bindPeripheralName"] ? [[NSUserDefaults standardUserDefaults] objectForKey:@"bindPeripheralName"] : NSLocalizedString(@"notBindPer", nil);
 //            model.isConnect = [BleManager shareInstance].connectState == kBLEstateDidConnected ? YES : NO;
             model.battery = [[NSUserDefaults standardUserDefaults] objectForKey:ELECTRICITY_INFO_SETTING] ? [[NSUserDefaults standardUserDefaults] objectForKey:ELECTRICITY_INFO_SETTING] : @"--";
@@ -181,7 +184,7 @@ static NSString *const settingHeaderID = @"settingHeader";
 - (NSArray *)groupSecondDataSourceArr
 {
     if (!_groupSecondDataSourceArr) {
-        NSArray *fucName = @[NSLocalizedString(@"提醒功能", nil),NSLocalizedString(@"地点切换", nil),NSLocalizedString(@"工作模式", nil),NSLocalizedString(@"关于口罩", nil)];
+        NSArray *fucName = @[NSLocalizedString(@"提醒功能", nil),NSLocalizedString(@"使用场景", nil),NSLocalizedString(@"工作模式", nil),NSLocalizedString(@"关于口罩", nil)];
         NSArray *imageName = @[@"set_remind",@"set_location",@"set_mode",@"set_about"];
         NSMutableArray *dataArr = [NSMutableArray array];
         for (int i = 0; i < fucName.count; i ++) {

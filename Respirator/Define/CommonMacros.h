@@ -27,11 +27,7 @@
 //用户model缓存
 #define KUserModelCache @"KUserModelCache"
 
-
-
-#pragma mark - ——————— 网络状态相关 ————————
-
-//网络状态变化
-#define KNotificationNetWorkStateChange @"KNotificationNetWorkStateChange"
+//蓝牙状态改变
+#define KNotificationBleStateChange @"KNotificationBleStateChange"
 
 #endif /* CommonMacros_h */

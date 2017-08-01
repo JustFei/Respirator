@@ -9,46 +9,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Respirator/Modules/Setting(&#x8bbe;&#x7f6e;)/Controller/SettingViewController.m"
-            timestampString = "522667615.4908"
+            filePath = "Respirator/Base/NavigationController/RootNavigationController.m"
+            timestampString = "523176284.207226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-contentView"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-pushViewController:animated:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[SettingViewController contentView]"
-                  moduleName = "Respirator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mofujian/Desktop/ProjectList/ProjectList/MRD-HM010%20%E5%8F%A3%E7%BD%A9/Respirator/Respirator/Modules/Setting(%E8%AE%BE%E7%BD%AE)/Controller/SettingViewController.m"
-                  timestampString = "522667616.68157"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "300">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__36-[SettingViewController contentView]_block_invoke"
-                  moduleName = "Respirator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mofujian/Desktop/ProjectList/ProjectList/MRD-HM010%20%E5%8F%A3%E7%BD%A9/Respirator/Respirator/Modules/Setting(%E8%AE%BE%E7%BD%AE)/Controller/SettingViewController.m"
-                  timestampString = "522667616.686282"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Respirator/Base/NavigationController/RootNavigationController.m"
+            timestampString = "523176285.543023"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-pushViewController:animated:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Respirator/Base/NavigationController/RootNavigationController.m"
+            timestampString = "523176449.852223"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "-pushViewController:animated:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

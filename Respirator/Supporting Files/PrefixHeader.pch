@@ -11,11 +11,11 @@
 
 //全局宏
 #import "UtilsMacros.h"
-#import "URLMacros.h"
 #import "FontAndColorMacros.h"
 #import "ThirdMacros.h"
 #import "CommonMacros.h"
 #import "TextConstants.h"
+#import "FrameConstants.h"
 
 //基础类
 #import "AppDelegate.h"
@@ -26,11 +26,14 @@
 #import "AppManager.h"
 #import "UserManager.h"
 #import "UIButton+XYButton.h"
+#import "SyncTool.h"
+#import "BleManager.h"
+#import "FMDBManager.h"
 
 //第三方
 #import "YYKit.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <Masonry/Masonry.h>
-#import "MaterialControls.h"
+@import MaterialControls;
 
 #endif /* PrefixHeader_pch */

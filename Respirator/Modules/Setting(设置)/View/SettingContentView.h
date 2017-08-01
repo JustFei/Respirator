@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^SelectVCNumberBlock)(NSInteger number);
+
 @interface SettingContentView : UIView
+
+@property (copy, nonatomic) SelectVCNumberBlock selectVCNumberBlock;
 
 @end
