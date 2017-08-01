@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Respirator/Base/NavigationController/RootNavigationController.m"
-            timestampString = "523176284.207226"
+            filePath = "Respirator/Modules/Setting(&#x8bbe;&#x7f6e;)/SubModules/UserInfo(&#x7528;&#x6237;&#x4fe1;&#x606f;)/UserHeadimageCell.m"
+            timestampString = "523276522.618592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "-pushViewController:animated:"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-initWithFrame:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Respirator/Base/NavigationController/RootNavigationController.m"
-            timestampString = "523176285.543023"
+            filePath = "Respirator/Modules/Setting(&#x8bbe;&#x7f6e;)/SubModules/UserInfo(&#x7528;&#x6237;&#x4fe1;&#x606f;)/UserInfoViewController.m"
+            timestampString = "523276537.926995"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "-pushViewController:animated:"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Respirator/Base/NavigationController/RootNavigationController.m"
-            timestampString = "523176449.852223"
+            filePath = "Respirator/Modules/Setting(&#x8bbe;&#x7f6e;)/SubModules/UserInfo(&#x7528;&#x6237;&#x4fe1;&#x606f;)/UserInfoViewController.m"
+            timestampString = "523276548.790568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "-pushViewController:animated:"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Respirator/Modules/Setting(&#x8bbe;&#x7f6e;)/SubModules/UserInfo(&#x7528;&#x6237;&#x4fe1;&#x606f;)/UserInfoViewController.m"
+            timestampString = "523276549.597202"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

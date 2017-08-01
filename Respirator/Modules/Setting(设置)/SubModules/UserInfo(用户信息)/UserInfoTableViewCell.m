@@ -38,7 +38,7 @@
         [self addSubview:_infoLabel];
         [_infoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.mas_centerY);
-            make.right.equalTo(self.mas_right).offset(-16);
+            make.right.equalTo(self.mas_right).offset(-32);
         }];
     }
     return self;

@@ -8,10 +8,12 @@
 
 #import "UserInfoViewController.h"
 #import "UserInfoTableViewCell.h"
+#import "UserHeadimageCell.h"
 
 @class UserInfoCellModel;
 
 static NSString *const UserInfoTableViewCellID = @"UserInfoTableViewCell";
+static NSString *const UserHeadimageCellID = @"UserHeadimageCell";
 
 @interface UserInfoViewController () < UITableViewDataSource, UITableViewDelegate >
 
@@ -33,20 +35,60 @@ static NSString *const UserInfoTableViewCellID = @"UserInfoTableViewCell";
 #pragma mark - UITableViewDelegate && UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section == 0) {
+        return 1;
+    }
     return self.dataArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UserInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:UserInfoTableViewCellID];
-    cell.model = self.dataArr[indexPath.row];
+    if (indexPath.section == 0) {
+        UserHeadimageCell *cell = [tableView dequeueReusableCellWithIdentifier:UserHeadimageCellID];
+        [cell.titleLabel setText:NSLocalizedString(@"头像", nil)];
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:USER_HEADIMAGE_SETTING]) {
+            UIImage *headImage = [[NSUserDefaults standardUserDefaults] objectForKey:USER_HEADIMAGE_SETTING];
+            [cell.headImage setImage:headImage];
+        }else {
+            [cell.headImage setImage:[UIImage imageNamed:@"set_avatar"]];
+        }
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        return cell;
+    }else {
+        UserInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:UserInfoTableViewCellID];
+        cell.model = self.dataArr[indexPath.row];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        return cell;
+    }
     
-    return cell;
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 16;
+    }else {
+        return 0;
+    }
+    
+    return 0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        return 57;
+    }else {
+        return 44;
+    }
+    
+    return 0;
 }
 
 #pragma mark - lazy
@@ -58,6 +100,7 @@ static NSString *const UserInfoTableViewCellID = @"UserInfoTableViewCell";
         _tableView.dataSource = self;
         
         [_tableView registerClass:NSClassFromString(UserInfoTableViewCellID) forCellReuseIdentifier:UserInfoTableViewCellID];
+        [_tableView registerClass:NSClassFromString(UserHeadimageCellID) forCellReuseIdentifier:UserHeadimageCellID];
         [self.view addSubview:_tableView];
     }
     
@@ -107,7 +150,7 @@ static NSString *const UserInfoTableViewCellID = @"UserInfoTableViewCell";
             for (int index = 0; index < titleArr.count; index ++) {
                 UserInfoCellModel *cellModel = [[UserInfoCellModel alloc] init];
                 cellModel.title = titleArr[index];
-                cellModel.info = @"";
+                cellModel.info = @"test";
                 [mutArr addObject:cellModel];
             }
             _dataArr = mutArr;
