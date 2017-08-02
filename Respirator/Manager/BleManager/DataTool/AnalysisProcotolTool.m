@@ -158,6 +158,28 @@ static AnalysisProcotolTool *analysisProcotolTool = nil;
     return model;
 }
 
+#pragma mark 解析运动目标的数据（07|87）
+- (manridyModel *)analysisSportTargetData:(NSData *)data WithHeadStr:(NSString *)head
+{
+    manridyModel *model = [[manridyModel alloc] init];
+    model.receiveDataType = ReturnModelTypeSportTargetModel;
+    
+    if ([head isEqualToString:@"07"]) {
+        NSData *target = [data subdataWithRange:NSMakeRange(2, 3)];
+        int targetValue = [NSStringTool parseIntFromData:target];
+        NSString *targetStr = [NSString stringWithFormat:@"%d",targetValue];
+        
+        model.isReciveDataRight = ResponsEcorrectnessDataRgith;
+        
+        model.sportTargetModel.sportTargetNumber = targetStr;
+        
+    }else if ([head isEqualToString:@"87"]) {
+        model.isReciveDataRight = ResponsEcorrectnessDataFail;
+    }
+    
+    return model;
+}
+
 #pragma mark 解析用户信息的数据（06|86）
 - (manridyModel *)analysisUserInfoData:(NSData *)data WithHeadStr:(NSString *)head
 {
@@ -217,6 +239,67 @@ static AnalysisProcotolTool *analysisProcotolTool = nil;
     }
     
     return model;
+}
+
+#pragma mark 解析分段计步的数据（1A|8A）
+//解析分段计步的数据（1A|8A）
+- (manridyModel *)analysisSegmentedStep:(NSData *)data WithHeadStr:(NSString *)head
+{
+    manridyModel *model = [[manridyModel alloc] init];
+    model.receiveDataType = ReturnModelTypeSegmentStepModel;
+    
+    if ([head isEqualToString:@"1a"]) {
+        const unsigned char *hexBytes = [data bytes];
+        NSString *TyStr = [NSString stringWithFormat:@"%02x", hexBytes[1]];
+        if ([TyStr isEqualToString:@"01"]) {
+            model.segmentStepModel.segmentedStepState = SegmentedStepDataUpdateData;
+        }else if ([TyStr isEqualToString:@"02"]) {
+            model.segmentStepModel.segmentedStepState = SegmentedStepDataHistoryCount;
+        }else if ([TyStr isEqualToString:@"04"]) {
+            model.segmentStepModel.segmentedStepState = SegmentedStepDataHistoryData;
+        }
+        //将nsdata 转为 byte 数组
+        NSUInteger len = [data length];
+        Byte *byteData = (Byte*)malloc(len);
+        memcpy(byteData, [data bytes], len);
+        
+        int ah = (((byteData[2] << 4) & 0x0ff0) | ((byteData[3] >> 4) & 0x0f)) & 0x0fff;
+        int ch = (byteData[4] | ((byteData[3] & 0x0f) << 8)) & 0x0fff;
+        int timeInterval = byteData[18];
+        NSData *stepData = [data subdataWithRange:NSMakeRange(5, 3)];
+        int stepValue = [NSStringTool parseIntFromData:stepData];
+        
+        NSData *mileageData = [data subdataWithRange:NSMakeRange(8, 3)];
+        int mileageValue = [NSStringTool parseIntFromData:mileageData];
+        
+        NSData *kcalData = [data subdataWithRange:NSMakeRange(11, 3)];
+        int kcalValue = [NSStringTool parseIntFromData:kcalData];
+        
+        NSData *startTimeData = [data subdataWithRange:NSMakeRange(14, 4)];
+        int startTimeValue = [NSStringTool parseIntFromData:startTimeData];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+        //utc 时间转为标准时间，不会存在时区差异
+        [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+        NSString *startTimeStr = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:startTimeValue]];
+        [formatter setDateFormat:@"yyyy-MM-dd"];
+        NSString *dateStr = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:startTimeValue]];
+        
+        model.segmentStepModel.AHCount = ah;
+        model.segmentStepModel.CHCount = ch;
+        model.segmentStepModel.stepNumber = [NSString stringWithFormat:@"%d",stepValue];
+        model.segmentStepModel.kCalNumber = [NSString stringWithFormat:@"%d",mileageValue];
+        model.segmentStepModel.mileageNumber = [NSString stringWithFormat:@"%d",kcalValue];
+        model.segmentStepModel.startTime = startTimeStr;
+        model.segmentStepModel.date = dateStr;
+        model.segmentStepModel.timeInterval = timeInterval;
+        
+        NSLog(@"segmentStepModel == %@", model.segmentStepModel);
+    }else {
+        model.isReciveDataRight = ResponsEcorrectnessDataFail;
+    }
+    
+    return  model;
 }
 
 @end

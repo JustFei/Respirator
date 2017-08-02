@@ -11,7 +11,7 @@
 
 typedef void(^UnitsSettingSelectBlock)(void);
 
-@interface UnitsSettingTableViewCell : MDTableViewCell
+@interface UnitsSettingTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UnitsSettingModel *model;
 @property (nonatomic, copy) UnitsSettingSelectBlock unitsSettingSelectBlock;

@@ -81,22 +81,9 @@
     BOOL isBind = [[NSUserDefaults standardUserDefaults] boolForKey:IS_BIND];
     NSLog(@"有没有绑定设备 == %d",isBind);
     if (isBind) {
-//        if (self.stateBar.isShowing) {
-//            [self.stateBar dismiss];
-//            self.stateBar = nil;
-//        }
 //        self.stateBar.text = NSLocalizedString(@"正在连接中", nil);
-//        [self.stateBar show];
         [self connectBLE];
     }else {
-//        if (self.stateBar.isShowing) {
-//            [self.stateBar dismiss];
-//            self.stateBar = nil;
-//        }
-//        self.stateBar.text = NSLocalizedString(@"未绑定设备", nil);
-//        self.stateBar.actionTitle = NSLocalizedString(@"绑定设备", nil);
-//        [self.stateBar addTarget:self action:@selector(bindAction)];
-//        [self.stateBar show];
     }
 }
 
@@ -111,7 +98,7 @@
             [[BleManager shareInstance] stopScan];
             
             if ([BleManager shareInstance].connectState == kBLEstateDisConnected) {
-                //[self.mainVc.stepView.stepLabel setText:@"未连接上设备，点击重试"];
+                
             }
         });
     }
@@ -161,30 +148,5 @@
     }
     return superVC;
 }
-
-//- (MDSnackbar *)stateBar
-//{
-//    if (!_stateBar) {
-//        _stateBar = [[MDSnackbar alloc] init];
-//        [_stateBar setActionTitleColor:NAVIGATION_BAR_COLOR];
-//        
-//        //这里1000000秒是让bar长驻在底部
-//        [_stateBar setDuration:1000000];
-//        _stateBar.multiline = YES;
-//        
-//        MDButton *cancelButton = [[MDButton alloc] initWithFrame:CGRectZero type:MDButtonTypeFlat rippleColor:nil];
-//        [cancelButton setImage:[UIImage imageNamed:@"delete"] forState:UIControlStateNormal];
-//        [cancelButton addTarget:self action:@selector(cancelStateBarAction:) forControlEvents:UIControlEventTouchUpInside];
-//        cancelButton.backgroundColor = RED_COLOR;
-//        [_stateBar addSubview:cancelButton];
-//        [cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.left.equalTo(_stateBar.mas_left).offset(16);
-//            //        make.top.equalTo(self.stateBar.mas_top).offset(10);
-//            make.centerY.equalTo(_stateBar.mas_centerY);
-//        }];
-//    }
-//    
-//    return _stateBar;
-//}
 
 @end

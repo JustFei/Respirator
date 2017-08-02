@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () < BleConnectDelegate, BleDiscoverDelegate >
 
 @property (nonatomic, strong) MDSnackbar *stateBar;
 
@@ -17,6 +17,12 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [BleManager shareInstance].connectDelegate = self;
+//    self.myBleManager = [BleManager shareInstance];
+//    self.myBleManager.discoverDelegate = self;
+//    self.myBleManager.
+//    self.myBleManager.searchDelegate = self;
     
     //初始化window
     [self initWindow];
@@ -32,5 +38,14 @@
     
     return YES;
 }
+
+#pragma mark - bleConnectDelegate
+- (void)manridyBLEDidConnectDevice:(BleDevice *)device
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[SyncTool shareInstance] syncAllData];
+    });
+}
+
 
 @end

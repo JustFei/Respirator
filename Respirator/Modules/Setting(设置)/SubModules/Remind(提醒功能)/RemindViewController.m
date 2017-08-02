@@ -1,29 +1,29 @@
 //
-//  WorkModeViewController.m
+//  RemindViewController.m
 //  Respirator
 //
-//  Created by JustFei on 2017/8/1.
+//  Created by JustFei on 2017/8/2.
 //  Copyright © 2017年 manridy.com. All rights reserved.
 //
 
-#import "WorkModeViewController.h"
+#import "RemindViewController.h"
 #import "RemindCell.h"
 
 static NSString *const RemindCellID = @"RemindCell";
 
-@interface WorkModeViewController ()< UITableViewDelegate, UITableViewDataSource >
+@interface RemindViewController () < UITableViewDelegate, UITableViewDataSource >
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSArray *dataArr;
 
 @end
 
-@implementation WorkModeViewController
+@implementation RemindViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = NSLocalizedString(@"工作模式", nil);
+    self.title = NSLocalizedString(@"提醒功能", nil);
     self.view.backgroundColor = SETTING_BACKGROUND_COLOR;
     self.tableView.backgroundColor = CLEAR_COLOR;
 }
@@ -62,30 +62,6 @@ static NSString *const RemindCellID = @"RemindCell";
     return 16;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView *view = [UIView new];
-    UILabel *tipLabel = [[UILabel alloc] init];
-    [tipLabel setText:@"开机每隔5分钟测量一次，测量时间1分钟，放置5分钟后，停止运行，运行2分钟，重新运行，循环该过程。"];
-    tipLabel.numberOfLines = 0;
-    [tipLabel setTextColor:TEXT_BLACK_COLOR_LEVEL3];
-    [tipLabel setFont:[UIFont systemFontOfSize:12]];
-    [view addSubview:tipLabel];
-    [tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(view.mas_left).offset(16);
-        make.top.equalTo(view.mas_top).offset(8);
-        make.right.equalTo(view.mas_right).offset(-16);
-//        make.bottom.equalTo(view.mas_bottom).offset(-16);
-    }];
-    
-    return view;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 100;
-}
-
 #pragma mark - lazy
 - (UITableView *)tableView
 {
@@ -107,7 +83,7 @@ static NSString *const RemindCellID = @"RemindCell";
 - (NSArray *)dataArr
 {
     if (!_dataArr) {
-        _dataArr = @[@{@"title":@"智能测量", @"isOpen":@1}];
+        _dataArr = @[@{@"title":@"PM2.5超标提醒", @"isOpen":@1},@{@"title":@"PM2.5合格提醒", @"isOpen":@0},@{@"title":@"口罩防丢提醒", @"isOpen":@0}];
     }
     
     return _dataArr;

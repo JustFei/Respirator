@@ -10,4 +10,10 @@
 
 @interface StepContentView : UIView
 
+//更新当前数据
+- (void)updateUIWithStepModel:(StepModel *)model;
+
+//更新图表视图
+- (void)updateStepUIWithDataArr:(NSArray *)dbArr;
+
 @end

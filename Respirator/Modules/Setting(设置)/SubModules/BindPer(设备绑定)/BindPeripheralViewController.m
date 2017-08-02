@@ -264,16 +264,11 @@
     self.hud.label.text = NSLocalizedString(@"同步设置", nil);
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [[SyncTool shareInstance] syncSetting];
-        [SyncTool shareInstance].syncSettingSuccessBlock = ^(BOOL success) {
-            if (success) {
-                self.hud.label.text = NSLocalizedString(@"同步成功", nil);
-                [self.hud hideAnimated:YES afterDelay:1.5];
-                [self.navigationController popViewControllerAnimated:YES];
-            }else {
-                self.hud.label.text = NSLocalizedString(@"同步失败", nil);
-                [self.hud hideAnimated:YES afterDelay:1.5];
-            }
-        };
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.hud.label.text = NSLocalizedString(@"同步完成", nil);
+            [self.hud hideAnimated:YES afterDelay:1.5];
+            [self.navigationController popViewControllerAnimated:YES];
+        });
     });
     
     [self.myBleMananger stopScan];

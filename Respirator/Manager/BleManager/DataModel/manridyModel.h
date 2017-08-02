@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "SetTimeModel.h"
 #import "UserInfoModel.h"
-#import "SportModel.h"
+#import "StepModel.h"
 #import "FirmwareModel.h"
+#import "SegmentedStepModel.h"
+#import "SportTargetModel.h"
 
 typedef enum : NSUInteger {
     ResponsEcorrectnessDataFail = 0,
@@ -20,8 +22,10 @@ typedef enum : NSUInteger {
 typedef enum : NSUInteger {
     ReturnModelTypeSetTimeModel = 0,
     ReturnModelTypeSportModel,
+    ReturnModelTypeSportTargetModel,
     ReturnModelTypeFirwmave,
-    ReturnModelTypeUserInfoModel
+    ReturnModelTypeUserInfoModel,
+    ReturnModelTypeSegmentStepModel
 } ReturnModelType;
 
 
@@ -40,10 +44,16 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) UserInfoModel *userInfoModel;
 
 //返回运动信息数据
-@property (nonatomic, strong) SportModel *sportModel;
+@property (nonatomic, strong) StepModel *sportModel;
 
 //设备信息
 @property (nonatomic, strong) FirmwareModel *firmwareModel;
+
+//分段计步
+@property (nonatomic, strong) SegmentedStepModel *segmentStepModel;
+
+//返回运动目标数据
+@property (nonatomic, strong) SportTargetModel *sportTargetModel;
 
 @end
 

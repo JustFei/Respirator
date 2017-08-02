@@ -40,7 +40,7 @@
 - (NSArray *)vcArr
 {
     if (!_vcArr) {
-        _vcArr = @[@"UserInfoViewController",@"BindPeripheralViewController",@"",@"UserLocationViewController",@"",@""];
+        _vcArr = @[@"UserInfoViewController",@"BindPeripheralViewController",@"RemindViewController",@"UserLocationViewController",@"WorkModeViewController",@"AboutViewController"];
     }
     
     return _vcArr;

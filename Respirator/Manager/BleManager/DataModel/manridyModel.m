@@ -28,10 +28,10 @@
     return _userInfoModel;
 }
 
-- (SportModel *)sportModel
+- (StepModel *)sportModel
 {
     if (!_sportModel) {
-        _sportModel = [[SportModel alloc] init];
+        _sportModel = [[StepModel alloc] init];
     }
     
     return  _sportModel;
@@ -44,6 +44,24 @@
     }
     
     return _firmwareModel;
+}
+
+- (SegmentedStepModel *)segmentStepModel
+{
+    if (!_segmentStepModel) {
+        _segmentStepModel = [[SegmentedStepModel alloc] init];
+    }
+    
+    return _segmentStepModel;
+}
+
+- (SportTargetModel *)sportTargetModel
+{
+    if (!_sportTargetModel) {
+        _sportTargetModel = [[SportTargetModel alloc] init];
+    }
+    
+    return _sportTargetModel;
 }
 
 @end

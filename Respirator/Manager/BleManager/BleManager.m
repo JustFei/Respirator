@@ -23,11 +23,7 @@
 @property (nonatomic, strong) CBCharacteristic *notifyCharacteristic;
 @property (nonatomic, strong) CBCharacteristic *writeCharacteristic;
 @property (nonatomic, strong) NSMutableArray *deviceArr;
-//@property (nonatomic, strong) AllBleFmdb *fmTool;
-//@property (nonatomic, strong) UIAlertView *disConnectView;
 @property (nonatomic, strong) UNMutableNotificationContent *notiContent;
-/** 控制同步发送消息的信号量 */
-@property (nonatomic, strong) dispatch_semaphore_t semaphore;
 @property (nonatomic, strong) dispatch_queue_t sendMessageQueue;
 @property (nonatomic, strong) NSTimer *resendTimer;
 @property (nonatomic, assign) BOOL haveResendMessage;
@@ -48,7 +44,6 @@ static BleManager *bleManager = nil;
 //        _fmTool = [[AllBleFmdb alloc] init];
         self.notiContent = [[UNMutableNotificationContent alloc] init];
         // 信号量初始化为1
-        self.semaphore = dispatch_semaphore_create(1);
         self.sendMessageQueue = dispatch_get_global_queue(0, 0);
     }
     return self;
@@ -154,10 +149,7 @@ static BleManager *bleManager = nil;
     //1.写入数据
     dispatch_async(self.sendMessageQueue, ^{
         if (self.currentDev.peripheral && self.writeCharacteristic) {
-            // wait操作-1，当别的消息进来就会阻塞，知道这条消息收到回调，signal+1后，才会继续执行。保证了消息的队列发送，保证稳定性。
-            __block long x = 0;
-            x = dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
-            [NSThread sleepForTimeInterval:0.5];
+            [NSThread sleepForTimeInterval:0.05];
             NSLog(@"---%@---", message);
             [self.currentDev.peripheral writeValue:message forCharacteristic:self.writeCharacteristic type:CBCharacteristicWriteWithResponse];
         }
@@ -205,15 +197,6 @@ static BleManager *bleManager = nil;
     [self addMessageToQueue:[NSStringTool hexToBytes:protocolStr]];
     NSLog(@"清空计步数据");
 }
-//get GPS data
-- (void)writeGPSToPeripheral
-{
-    NSString *protocolStr = [NSStringTool protocolAddInfo:nil head:@"05"];
-    
-    //写入操作
-    [self addMessageToQueue:[NSStringTool hexToBytes:protocolStr]];
-    NSLog(@"gps 请求成功");
-}
 
 //set userInfo
 - (void)writeUserInfoToPeripheralWeight:(NSString *)weight andHeight:(NSString *)height
@@ -237,14 +220,25 @@ static BleManager *bleManager = nil;
     NSLog(@"同步计步目标");
 }
 
-//phone and message remind
-- (void)writePhoneAndMessageRemindToPeripheral:(Remind *)remindModel
+/** 分段计步获取 */
+- (void)writeSegementStepWithHistoryMode:(SegmentedStepData)mode
 {
     NSString *protocolStr;
-    protocolStr = [NSStringTool protocolForRemind:remindModel];
+    switch (mode) {
+            /** 具体的历史数据 */
+        case SegmentedStepDataHistoryCount:
+            protocolStr = @"FC1A02";
+            break;
+            /** 历史数据条数 */
+        case SegmentedStepDataHistoryData:
+            protocolStr = @"FC1A04";
+            break;
+            
+        default:
+            break;
+    }
     
     [self addMessageToQueue:[NSStringTool hexToBytes:protocolStr]];
-    NSLog(@"设置同步电话短信");
 }
 
 //search my peripheral
@@ -360,44 +354,6 @@ static BleManager *bleManager = nil;
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationBleStateChange object:@(central.state)];
-//    NSString *message = nil;
-//    switch (central.state) {
-//        case 0:
-//            self.systemBLEstate = 0;
-//            break;
-//        case 1:
-//            //            message = @"该设备不支持蓝牙功能，请检查系统设置";
-//            self.systemBLEstate = 1;
-//            break;
-//        case 2:
-//        {
-//            self.systemBLEstate = 2;
-//            message = @"该设备蓝牙未授权，请检查系统设置";
-//        }
-//            break;
-//        case 3:
-//        {
-//            self.systemBLEstate = 3;
-//            message = @"该设备蓝牙未授权，请检查系统设置";
-//        }
-//            break;
-//        case 4:
-//        {
-//            message = NSLocalizedString(@"phoneNotOpenBLE", nil);
-//            self.systemBLEstate = 4;
-//            NSLog(@"message == %@",message);
-//        }
-//            break;
-//        case 5:
-//        {
-//            self.systemBLEstate = 5;
-//            message = NSLocalizedString(@"bleHaveOpen", nil);
-//        }
-//            break;
-//            
-//        default:
-//            break;
-//    }
 }
 
 //查找到正在广播的指定外设
@@ -496,11 +452,7 @@ static BleManager *bleManager = nil;
 
 //获得某特征值变化的通知
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
-    if (error) {
-        NSLog(@"Error changing notification state: %@",[error localizedDescription]);
-    }else {
-        NSLog(@"Success changing notification state: %d;value = %@",characteristic.isNotifying ,characteristic.value);
-    }
+
 }
 
 //订阅特征值发送变化的通知，所有获取到的值都将在这里进行处理
@@ -526,8 +478,6 @@ static BleManager *bleManager = nil;
 {
     if ([value bytes] != nil) {
         const unsigned char *hexBytes = [value bytes];
-        // signal操作+1
-        dispatch_semaphore_signal(self.semaphore);
         //命令头字段
         NSString *headStr = [[NSString stringWithFormat:@"%02x", hexBytes[0]] localizedLowercaseString];
         
@@ -550,10 +500,9 @@ static BleManager *bleManager = nil;
             //分段计步数据
             manridyModel *model = [[AnalysisProcotolTool shareInstance] analysisSegmentedStep:value WithHeadStr:headStr];
             [[NSNotificationCenter defaultCenter] postNotificationName:GET_SEGEMENT_STEP object:model];
-        }else if ([headStr isEqualToString:@"1b"] || [headStr isEqualToString:@"9b"]) {
-            //分段跑步数据
-            manridyModel *model = [[AnalysisProcotolTool shareInstance] analysisSegmentedRun:value WithHeadStr:headStr];
-            [[NSNotificationCenter defaultCenter] postNotificationName:GET_SEGEMENT_RUN object:model];
+        }else if ([headStr isEqualToString:@"42"]) {
+            //PM2.5数据
+            
         }
     }
 }

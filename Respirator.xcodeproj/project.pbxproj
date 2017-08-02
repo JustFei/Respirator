@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0457C0F005473AB0F02556AD /* Pods_Respirator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C14BA9337B1C7C9D33BC60BE /* Pods_Respirator.framework */; };
+		100C42D71F316E29004C31E7 /* RemindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 100C42D61F316E29004C31E7 /* RemindViewController.m */; };
+		100C42DA1F31789A004C31E7 /* RemindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 100C42D91F31789A004C31E7 /* RemindCell.m */; };
+		100C42DD1F318425004C31E7 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 100C42DC1F318425004C31E7 /* AboutViewController.m */; };
+		100C42E01F318E7B004C31E7 /* AboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 100C42DF1F318E7B004C31E7 /* AboutTableViewCell.m */; };
+		100C42E31F31B7A3004C31E7 /* SegmentedStepModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 100C42E21F31B7A3004C31E7 /* SegmentedStepModel.m */; };
+		100C42E61F31C53D004C31E7 /* SportTargetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 100C42E51F31C53D004C31E7 /* SportTargetModel.m */; };
 		102DC1AC1F2720EA00C6F24A /* SettingContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 102DC1AB1F2720EA00C6F24A /* SettingContentView.m */; };
 		102DC1B41F27240700C6F24A /* SettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 102DC1AE1F27240700C6F24A /* SettingHeaderView.m */; };
 		102DC1B51F27240700C6F24A /* SettingPeripheralTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 102DC1B01F27240700C6F24A /* SettingPeripheralTableViewCell.xib */; };
@@ -63,7 +69,7 @@
 		10FD0D311F2EDC3A00DD14BE /* BleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD0D091F2EDC3A00DD14BE /* BleManager.m */; };
 		10FD0D361F2EDC3A00DD14BE /* manridyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD0D141F2EDC3A00DD14BE /* manridyModel.m */; };
 		10FD0D3B1F2EDC3A00DD14BE /* SetTimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD0D1E1F2EDC3A00DD14BE /* SetTimeModel.m */; };
-		10FD0D3D1F2EDC3A00DD14BE /* SportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD0D221F2EDC3A00DD14BE /* SportModel.m */; };
+		10FD0D3D1F2EDC3A00DD14BE /* StepModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD0D221F2EDC3A00DD14BE /* StepModel.m */; };
 		10FD0D421F2EDC3A00DD14BE /* AnalysisProcotolTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD0D2D1F2EDC3A00DD14BE /* AnalysisProcotolTool.m */; };
 		10FD0D431F2EDC3A00DD14BE /* NSStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD0D2F1F2EDC3A00DD14BE /* NSStringTool.m */; };
 		10FD0D461F2EDDB500DD14BE /* SyncTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD0D451F2EDDB500DD14BE /* SyncTool.m */; };
@@ -73,6 +79,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		100C42D51F316E29004C31E7 /* RemindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindViewController.h; sourceTree = "<group>"; };
+		100C42D61F316E29004C31E7 /* RemindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindViewController.m; sourceTree = "<group>"; };
+		100C42D81F31789A004C31E7 /* RemindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindCell.h; sourceTree = "<group>"; };
+		100C42D91F31789A004C31E7 /* RemindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindCell.m; sourceTree = "<group>"; };
+		100C42DB1F318425004C31E7 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		100C42DC1F318425004C31E7 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		100C42DE1F318E7B004C31E7 /* AboutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell.h; sourceTree = "<group>"; };
+		100C42DF1F318E7B004C31E7 /* AboutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell.m; sourceTree = "<group>"; };
+		100C42E11F31B7A3004C31E7 /* SegmentedStepModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedStepModel.h; sourceTree = "<group>"; };
+		100C42E21F31B7A3004C31E7 /* SegmentedStepModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedStepModel.m; sourceTree = "<group>"; };
+		100C42E41F31C53D004C31E7 /* SportTargetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportTargetModel.h; sourceTree = "<group>"; };
+		100C42E51F31C53D004C31E7 /* SportTargetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportTargetModel.m; sourceTree = "<group>"; };
 		102DC1AA1F2720EA00C6F24A /* SettingContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingContentView.h; sourceTree = "<group>"; };
 		102DC1AB1F2720EA00C6F24A /* SettingContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingContentView.m; sourceTree = "<group>"; };
 		102DC1AD1F27240700C6F24A /* SettingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingHeaderView.h; sourceTree = "<group>"; };
@@ -184,8 +202,8 @@
 		10FD0D141F2EDC3A00DD14BE /* manridyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = manridyModel.m; sourceTree = "<group>"; };
 		10FD0D1D1F2EDC3A00DD14BE /* SetTimeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTimeModel.h; sourceTree = "<group>"; };
 		10FD0D1E1F2EDC3A00DD14BE /* SetTimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTimeModel.m; sourceTree = "<group>"; };
-		10FD0D211F2EDC3A00DD14BE /* SportModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportModel.h; sourceTree = "<group>"; };
-		10FD0D221F2EDC3A00DD14BE /* SportModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportModel.m; sourceTree = "<group>"; };
+		10FD0D211F2EDC3A00DD14BE /* StepModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepModel.h; sourceTree = "<group>"; };
+		10FD0D221F2EDC3A00DD14BE /* StepModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepModel.m; sourceTree = "<group>"; };
 		10FD0D2C1F2EDC3A00DD14BE /* AnalysisProcotolTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisProcotolTool.h; sourceTree = "<group>"; };
 		10FD0D2D1F2EDC3A00DD14BE /* AnalysisProcotolTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisProcotolTool.m; sourceTree = "<group>"; };
 		10FD0D2E1F2EDC3A00DD14BE /* NSStringTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringTool.h; sourceTree = "<group>"; };
@@ -219,10 +237,10 @@
 		102DC1C11F274B2300C6F24A /* SubModules */ = {
 			isa = PBXGroup;
 			children = (
+				102DC1C71F274BF900C6F24A /* UserInfo(用户信息) */,
 				102DC1C41F274BF900C6F24A /* BindPer(设备绑定) */,
 				102DC1C61F274BF900C6F24A /* Remind(提醒功能) */,
 				10CCC9FC1F30666100D2DB16 /* UseLocation(使用场景) */,
-				102DC1C71F274BF900C6F24A /* UserInfo(用户信息) */,
 				102DC1C81F274BF900C6F24A /* WorkMode(工作模式) */,
 				102DC1C31F274BF900C6F24A /* AboutRespirator(关于口罩) */,
 			);
@@ -232,6 +250,10 @@
 		102DC1C31F274BF900C6F24A /* AboutRespirator(关于口罩) */ = {
 			isa = PBXGroup;
 			children = (
+				100C42DB1F318425004C31E7 /* AboutViewController.h */,
+				100C42DC1F318425004C31E7 /* AboutViewController.m */,
+				100C42DE1F318E7B004C31E7 /* AboutTableViewCell.h */,
+				100C42DF1F318E7B004C31E7 /* AboutTableViewCell.m */,
 			);
 			path = "AboutRespirator(关于口罩)";
 			sourceTree = "<group>";
@@ -248,6 +270,10 @@
 		102DC1C61F274BF900C6F24A /* Remind(提醒功能) */ = {
 			isa = PBXGroup;
 			children = (
+				100C42D51F316E29004C31E7 /* RemindViewController.h */,
+				100C42D61F316E29004C31E7 /* RemindViewController.m */,
+				100C42D81F31789A004C31E7 /* RemindCell.h */,
+				100C42D91F31789A004C31E7 /* RemindCell.m */,
 			);
 			path = "Remind(提醒功能)";
 			sourceTree = "<group>";
@@ -757,14 +783,18 @@
 		10FD0D0A1F2EDC3A00DD14BE /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				100C42E11F31B7A3004C31E7 /* SegmentedStepModel.h */,
+				100C42E21F31B7A3004C31E7 /* SegmentedStepModel.m */,
+				100C42E41F31C53D004C31E7 /* SportTargetModel.h */,
+				100C42E51F31C53D004C31E7 /* SportTargetModel.m */,
 				10FD0D131F2EDC3A00DD14BE /* manridyModel.h */,
 				10FD0D141F2EDC3A00DD14BE /* manridyModel.m */,
 				10FD0D1D1F2EDC3A00DD14BE /* SetTimeModel.h */,
 				10FD0D1E1F2EDC3A00DD14BE /* SetTimeModel.m */,
 				10FD0D471F2EFAE700DD14BE /* UserInfoModel.h */,
 				10FD0D481F2EFAE700DD14BE /* UserInfoModel.m */,
-				10FD0D211F2EDC3A00DD14BE /* SportModel.h */,
-				10FD0D221F2EDC3A00DD14BE /* SportModel.m */,
+				10FD0D211F2EDC3A00DD14BE /* StepModel.h */,
+				10FD0D221F2EDC3A00DD14BE /* StepModel.m */,
 				10FD0D4A1F2EFAFF00DD14BE /* FirmwareModel.h */,
 				10FD0D4B1F2EFAFF00DD14BE /* FirmwareModel.m */,
 			);
@@ -925,7 +955,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10FD0D3D1F2EDC3A00DD14BE /* SportModel.m in Sources */,
+				100C42E31F31B7A3004C31E7 /* SegmentedStepModel.m in Sources */,
+				10FD0D3D1F2EDC3A00DD14BE /* StepModel.m in Sources */,
 				10CCCA0E1F3086E300D2DB16 /* UserInfoCellModel.m in Sources */,
 				10CCCA111F30892200D2DB16 /* UserHeadimageCell.m in Sources */,
 				102DC1C01F2729C900C6F24A /* SettingPeripheralTableViewCell.m in Sources */,
@@ -937,6 +968,7 @@
 				108C8C441F21F08500D86FC0 /* NJKWebViewProgress.m in Sources */,
 				108C8BAA1F21CD0600D86FC0 /* AppDelegate+AppService.m in Sources */,
 				10FD0D421F2EDC3A00DD14BE /* AnalysisProcotolTool.m in Sources */,
+				100C42E61F31C53D004C31E7 /* SportTargetModel.m in Sources */,
 				10C03C751F2336860048F9A4 /* StepContentView.m in Sources */,
 				108C8BFA1F21DA2800D86FC0 /* GameInfo.m in Sources */,
 				10CCCA031F30666100D2DB16 /* UnitsSettingModel.m in Sources */,
@@ -950,6 +982,7 @@
 				108C8BEE1F21D4C600D86FC0 /* MainTabBarController.m in Sources */,
 				10FD0D361F2EDC3A00DD14BE /* manridyModel.m in Sources */,
 				10CCC9F81F30572200D2DB16 /* WorkModeViewController.m in Sources */,
+				100C42D71F316E29004C31E7 /* RemindViewController.m in Sources */,
 				108C8C271F21DBA300D86FC0 /* UIViewController+AlertViewAndActionSheet.m in Sources */,
 				10FD0D431F2EDC3A00DD14BE /* NSStringTool.m in Sources */,
 				10CCCA041F30666100D2DB16 /* UnitsSettingTableViewCell.m in Sources */,
@@ -957,9 +990,12 @@
 				108C8BD51F21D3ED00D86FC0 /* main.m in Sources */,
 				10CCCA081F3069DA00D2DB16 /* UserInfoViewController.m in Sources */,
 				102DC1B41F27240700C6F24A /* SettingHeaderView.m in Sources */,
+				100C42E01F318E7B004C31E7 /* AboutTableViewCell.m in Sources */,
 				108C8C001F21DABF00D86FC0 /* AppManager.m in Sources */,
 				108C8C051F21DB5E00D86FC0 /* AdPageView.m in Sources */,
 				108C8BF11F21D4C600D86FC0 /* TabBarItem.m in Sources */,
+				100C42DD1F318425004C31E7 /* AboutViewController.m in Sources */,
+				100C42DA1F31789A004C31E7 /* RemindCell.m in Sources */,
 				102DC1B61F27240700C6F24A /* SettingTableViewCell.m in Sources */,
 				108C8BEF1F21D4C600D86FC0 /* TabBar.m in Sources */,
 				108C8C341F21E32500D86FC0 /* StepViewController.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  SportModel.h
+//  StepModel.h
 //  ManridyBleDemo
 //
 //  Created by 莫福见 on 16/9/12.
@@ -15,7 +15,7 @@ typedef enum : NSUInteger {
     MotionTypeDataInPeripheral,
 } MotionType;
 
-@interface SportModel : NSObject
+@interface StepModel : NSObject
 
 @property (nonatomic ,copy) NSString *stepNumber;
 @property (nonatomic ,copy) NSString *mileageNumber;

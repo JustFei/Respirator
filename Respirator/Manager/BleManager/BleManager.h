@@ -137,6 +137,9 @@ typedef enum{
 /** 设置运动目标 */
 - (void)writeMotionTargetToPeripheral:(NSString *)target;
 
+/** 分段计步获取 */
+- (void)writeSegementStepWithHistoryMode:(SegmentedStepData)mode;
+
 /** 获取设备版本号 */
 - (void)writeRequestVersion;
 

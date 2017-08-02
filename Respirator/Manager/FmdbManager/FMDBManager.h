@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FMDB.h"
 
-@class SportModel;
+@class StepModel;
 @class HeartRateModel;
 @class UserInfoModel;
 @class SleepModel;
@@ -40,7 +40,7 @@ typedef enum : NSUInteger {
 
 #pragma mark - StepData 
 //插入模型数据
-- (BOOL)insertStepModel:(SportModel *)model;
+- (BOOL)insertStepModel:(StepModel *)model;
 
 //查询数据,如果 传空 默认会查询表中所有数据
 - (NSArray *)queryStepWithDate:(NSString *)date;
@@ -49,7 +49,14 @@ typedef enum : NSUInteger {
 //- (BOOL)deleteData:(NSString *)deleteSql;
 
 //修改数据
-- (BOOL)modifyStepWithDate:(NSString *)date model:(SportModel *)model;
+- (BOOL)modifyStepWithDate:(NSString *)date model:(StepModel *)model;
+
+#pragma mark - SegmentStepData
+//插入分段计步数据
+- (BOOL)insertSegmentStepModel:(SegmentedStepModel *)model;
+
+//查询分段计步数据
+- (NSArray *)querySegmentedStepWithDate:(NSString *)date;
 
 
 #pragma mark - CloseData

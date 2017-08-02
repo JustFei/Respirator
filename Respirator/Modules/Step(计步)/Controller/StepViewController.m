@@ -21,6 +21,7 @@
     [super viewDidLoad];
     
     [self setupUI];
+    [self initNotification];
 }
 
 #pragma mark - init UI
@@ -28,6 +29,20 @@
 {
     [self addNavigationItemWithImageNames:@[@"pm_historyicon"] isLeft:YES target:self action:@selector(showStepHistoryVC) tags:@[@1000]];
     self.contentView.backgroundColor = CViewBgColor;
+}
+
+- (void)initNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getStepDataWithNotification:) name:GET_MOTION_DATA object:nil];
+}
+
+#pragma mark - noti
+- (void)getStepDataWithNotification:(NSNotification *)noti
+{
+    manridyModel *model = [noti object];
+    if (model.sportModel.motionType == MotionTypeStepAndkCal) {
+        [self.contentView updateUIWithStepModel:model.sportModel];
+    }
 }
 
 #pragma mark - Action
